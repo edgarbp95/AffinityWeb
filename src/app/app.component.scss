@@ -128,12 +128,16 @@ html {
 
     .footer-affi{
         display: grid;
-        grid-template-columns: 1fr;
-        margin-top: 20px;
+        grid-template-columns: 1fr 1fr;
+        margin: 40px 0 20px;
     }
 
     .footer-item{
         border: none;
+        padding: 10px;
+        p{
+            font-size: 12px;
+        }
     }
     
 }
