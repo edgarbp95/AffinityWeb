@@ -1,0 +1,93 @@
+<div class="w-full overflow-hidden sobre-nosotros flex justify-center items-center text-white flex-col">
+  <div class="z-20 flex justify-center flex-col items-center w-2/3 m-auto gap-4">
+    <h2 class="text-4xl underline pb-2 uppercase font-bold">AFFINITY GROUP</h2>
+    <p class="text-[16px] text-justify">En Affinty Group, nos especializamos en operar y asesorar aseguradoras, bancos, empresas de retail, servicios públicos y más, en el desarrollo de operaciones de bancaseguros, seguros masivos, microseguros y seguros de afinidad. Desde que comenzamos en Costa Rica en 2008, nuestro propósito ha sido claro: fortalecer la relación entre las empresas y sus clientes a través de soluciones aseguradoras efectivas y significativas.</p>
+  </div>
+</div>
+<div class="flex gap-3 w-[95%] max-w-[1300px] m-auto py-[40px] nuestro-equipo" data-aos="fade-in" data-aos-delay="100">
+  <div class="w-full max-w-[500px] min-w-[500px] relative mapa">
+
+    <ul class="absolute bottom-[50px] left-0 list-disc">
+      <li class="uppercase text-sm tracking-widest font-medium">Costa Rica.</li>
+      <li class="uppercase text-sm tracking-widest font-medium">Honduras.</li>
+      <li class="uppercase text-sm tracking-widest font-medium">Republica Dominicana.</li>
+      <li class="uppercase text-sm tracking-widest font-medium">Panama.</li>
+    </ul>
+    <img src="../../assets/mapa-affinity.png" alt="Mapa Affinity Group">
+  </div>
+  <div class="flex flex-col gap-3 pt-[30px] min-h-[517px] info">
+    <div class="flex flex-col gap-1">
+      <h4 class="tracking-wider text-sm uppercase font-medium"> <i class="fa  fa-users"></i>  Nuestro equipo</h4>
+      <div class="tab-aboutus flex gap-3">
+        <h3 class="text-3xl font-semibold transition-all  cursor-pointer" (click)="tab = 'about'"> <span class="text-gray-500 opacity-50" [ngClass]="{'active-tab': tab === 'about'}">Sobre Nosotros</span></h3>
+        <h3 class="text-3xl font-semibold transition-all cursor-pointer border-l border-dashed border-gray-500 pl-4" (click)="tab = 'exp'"><span class="text-gray-500 opacity-50" [ngClass]="{'active-tab': tab === 'exp'}">Experiencia</span></h3>
+      </div>
+    </div>
+    <ng-container *ngIf="tab === 'about'">
+      <p class="text-justify">Contamos con un equipo multidisciplinario de expertos en seguros, marketing, operaciones y tecnología, provenientes de reconocidas corredoras internacionales, entidades bancarias de prestigio y empresas líderes en desarrollo de software. </p>
+      <p class="text-justify">Gracias a esto, ofrecemos soluciones tecnológicas flexibles, amigables y personalizadas que optimizan los procesos de venta y gestión de seguros, adaptándonos a las necesidades específicas de cada cliente corporativo.</p>
+      <p class="text-justify">Actualmente, operamos en <span class="font-semibold"> Costa Rica, Honduras, República Dominicana y Panamá</span>, lo que nos permite acompañar a nuestros clientes en distintos mercados con una propuesta integral y adaptada a cada entorno.</p>
+      <div class="flex flex-col gap-3 mt-3 md:flex-row">
+        <div class="card-simple flex flex-col gap-2 border-2 border-gris-claro !bg-[#23365D] shadow-md hover:scale-105 transition-all">
+          <h4 class="tracking-wider font-medium border-l-2 border-[#ED9F2D] pl-2  text-white">VISIÓN</h4>
+          <p class="text-xs text-justify  text-white">Ser el aliado estratégico preferido por aseguradoras, bancos y otras compañías, liderando la evolución del sector a través de soluciones integrales que impulsen su rentabilidad, transformación digital y posicionamiento en el mercado, destacándonos por nuestra agilidad, innovación y enfoque en resultados.</p>
+    
+        </div>
+        <div class="card-simple flex flex-col gap-2 border-2 border-gris-claro !bg-[#23365D] shadow-md hover:scale-105 transition-all">
+          <h4 class="tracking-wider font-medium border-l-2 border-[#ED9F2D] pl-2 text-white">MISIÓN</h4>
+          <p class="text-xs text-justify text-white">Ofrecer soluciones tecnológicas y asesoría de alto impacto que optimicen procesos, potencien ventas y mejoren la experiencia del cliente, generando valor real mediante conocimiento del sector, innovación y relaciones duraderas basadas en la confianza y el crecimiento mutuo.</p>
+        
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="tab === 'exp'">
+    <ul class="flex flex-col gap-3 pl-2 mt-3">
+      <li><i class="fa fa-check-circle mr-1 text-[#3BB54A]"></i> Más de 17 años de experiencia.</li>
+      <li><i class="fa fa-check-circle mr-1 text-[#3BB54A]"></i> Más de 800.000 asegurados.</li>
+      <li><i class="fa fa-check-circle mr-1 text-[#3BB54A]"></i> Más de 30 productos de Banca Seguros y seguros masivos.</li>
+      <li><i class="fa fa-check-circle mr-1 text-[#3BB54A]"></i> Más de 9.000 usuarios del sistema, entre ellos, vendedores, administradores y personal operativo.</li>
+      <li><i class="fa fa-check-circle mr-1 text-[#3BB54A]"></i> Contamos con más de 20 diferentes perfiles de acceso al sistema.</li>
+      <li><i class="fa fa-check-circle mr-1 text-[#3BB54A]"></i> Superamos ya los USD$48 millones de primas recaudadas en el sistema por nuestros clientes.</li>
+      <li><i class="fa fa-check-circle mr-1 text-[#3BB54A]"></i> Ya tenemos más de 870 mil pólizas vendidas y administradas por nuestros clientes a través del sistema.</li>
+    </ul>
+
+
+    </ng-container>
+  </div>
+</div>
+
+<div class="flex flex-col bg-gray-100 py-4 border-t border-gray-200">
+  <div class="m-auto max-w-[1300px] w-[95%]">
+    <h3 class="text py-2 uppercase text-sm font-medium tracking-widest"><i class="fa fa-heart"></i> Nuestros Valores</h3>
+    <div class="w-full p-4 flex justify-center gap-6 valores">
+      <div class="flex flex-col gap-2 items-center " data-aos="fade-in" data-aos-delay="100">
+        <img src="../../assets/valores-innovacion.png" alt="" class="w-[70px]">
+        <h3 class="font-semibold text-lg">Innovación</h3>
+        <p class="text-center text-sm">Buscamos soluciones creativas que generen ventajas competitivas.</p>
+      </div>
+      <div class="flex flex-col gap-2 items-center " data-aos="fade-in" data-aos-delay="200">
+        <img src="../../assets/valores-enfoque.png" alt="" class="w-[70px]">
+        <h3 class="font-semibold text-lg">Enfoque</h3>
+        <p class="text-center text-sm">Creamos soluciones centradas en las necesidades del cliente.
+      </p>
+      </div>
+      <div class="flex flex-col gap-2 items-center " data-aos="fade-in" data-aos-delay="300">
+        <img src="../../assets/valores-compromiso.png" alt="" class="w-[70px]">
+        <h3 class="font-semibold text-lg">Compromiso</h3>
+        <p class="text-center text-sm">Trabajamos con responsabilidad para lograr un impacto tangible.</p>
+      </div>
+      <div class="flex flex-col gap-2 items-center " data-aos="fade-in" data-aos-delay="400">
+        <img src="../../assets/valores-confianza.png" alt="" class="w-[70px]">
+        <h3 class="font-semibold text-lg">Transparencia</h3>
+        <p class="text-center text-sm">Construimos relaciones abiertas y duraderas.</p>
+      </div>
+      <div class="flex flex-col gap-2 items-center " data-aos="fade-in" data-aos-delay="500">
+        <img src="../../assets/valores-adaptabilidad.png" alt="" class="w-[80px]">
+        <h3 class="font-semibold text-lg">Adaptabilidad</h3>
+        <p class="text-center text-sm">Respondemos con rapidez y flexibilidad para entregar valor continuo.</p>
+      </div>
+    
+    
+    </div>
+  </div>
+</div>

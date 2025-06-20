@@ -1,0 +1,117 @@
+<div class="" [ngClass]="{'absolute w-full' : isHome, 'bg-[#132c4f]': !isHome}">
+  <div class="header bg-[#01040757] pt-10 pb-4 px-4 md:!px-20 flex justify-between">
+    <img src="../assets/af-logo.svg" alt="Affinity Logo">
+    <ul class="header-menu  gap-4 justify-center items-center text-white uppercase font-semibold hidden md:flex">
+      <li [routerLink]="'/home'">Home</li>
+      <li [routerLink]="'/compañia'">Compañia</li>
+      <li [routerLink]="'/home'"><a (click)="navigateAndScroll('servicio')">Servicio</a></li>
+      <li [routerLink]="'/soluciones-tecnologicas'">Affinity Pro</li>
+      <li [routerLink]="'/home'"><a (click)="navigateAndScroll('clientes')">Clientes</a></li>
+     
+    </ul>
+    <div class="header-soporte uppercase text-white flex gap-2 justify-center items-center font-semibold cursor-pointer hidden lg:flex" (click)="modalContact = true">
+      <i class="fa fa-phone-square" style="color: #ffa400;"></i>
+      CONTACTO
+    </div>
+    <div class="relative z-50 flex justify-center items-center md:hidden">
+      <div
+        class="w-8 h-6 flex flex-col justify-between cursor-pointer transition-all duration-300"
+        [class.open]="isOpen"
+        (click)="toggleMenu()"
+      >
+        <span
+          class="block h-1 bg-white transition-transform duration-300 origin-left rounded-lg"
+          [ngStyle]="{
+            transform: isOpen ? 'rotate(40deg)' : 'none'
+          }"
+        ></span>
+        <span
+          class="block h-1 bg-white transition-opacity duration-300 rounded-lg"
+          [ngStyle]="{
+            opacity: isOpen ? '0' : '1'
+          }"
+        ></span>
+        <span
+          class="block h-1 bg-white transition-transform duration-300 origin-left rounded-lg"
+          [ngStyle]="{
+            transform: isOpen ? 'rotate(-42deg) ' : 'none'
+          }"
+        ></span>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-end items-center px-4 py-2  border-[#B1B3B3] sub-head" style="color: #fff;" bis_skin_checked="1">
+    <i class="fa fa-envelope px-1" style="color: #fff;"></i> {{"info@wsaffinity.com"}} 
+    <span class="hidden sm:flex justify-center items-center">
+      <span class="pl-2 pr-1" style="color: #53565A;">|</span>
+      <i class="fa fa-phone-square px-1 " style="color: #fff;"></i> (506) 60496846 - (506) 60148488 
+    </span> 
+  </div>
+</div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+<div class="menu-mobile bg-white absolute top-[107px] z-[10] w-full left-0 p-4 justify-center text-center rounded-b-3xl border-b-2 border-gray-600 hidden md:!hidden" [ngClass]="{'aparecer': isOpen}">
+  <ul class="flex flex-col gap-3 list-mobile">
+    <li [routerLink]="'/home'" (click)="isOpen=false">Home</li>
+    <li [routerLink]="'/compañia'" (click)="isOpen=false">Compañia</li>
+    <li [routerLink]="'/home'"><a (click)="navigateAndScroll('servicio')">Servicio</a></li>
+    <li [routerLink]="'/soluciones-tecnologicas'" (click)="isOpen=false">Affinity Pro</li>
+    <li [routerLink]="'/home'"><a (click)="navigateAndScroll('clientes')">Clientes</a></li>
+    <li (click)="modalContact = true">Contacto</li>
+  </ul>
+</div>
+<div class="footer flex justify-between items-center py-10 px-20 bg-[#0a121f] text-white">
+  <img class="logo-footer" src="../assets/af-logo.svg" alt="Affinity Logo">
+  <div class="flex gap-2 footer-affi">
+    <div class="border-r border-gray-500 footer-item">
+      <i class="fa fa-map text-[#ffa400]"></i>
+      <div>
+        <p>Avenida Escazú</p>
+        <p>Edificio 201,Oficina 406</p>
+        <p>San José, Costa Rica</p>
+      </div>
+    </div>
+    <div class="border-r border-gray-500 footer-item">
+      <i class="fa fa-envelope text-[#ffa400]"></i>
+      <a href="mailto:info@wsaffinity.com">{{"info@wsaffinitty.com"}}</a>
+    </div>
+    <div class="border-r border-gray-500 footer-item">
+      <i class="fa fa-phone text-[#ffa400]"></i>
+      <div>
+        <p>(506) 60496846</p>
+        <p>(506) 60148488</p>
+      </div>
+    </div>
+    <div class="footer-item">
+      <i class="fa fa-clock text-[#ffa400]"></i>
+      <div>
+        <p>Lunes - Viernes</p>
+        <p>9:00 - 17:00</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p-dialog [(visible)]="modalContact" [modal]="true" [closeOnEscape]="true" [style]="{ width: '95%', maxWidth: '600px' }" [dismissableMask]="true">
+  <div class="bg-white flex flex-col gap-4 pt-4 pb-10 bg-modal">
+    <div class="flex flex-col gap-2 items-center justify-center relative">
+      <h2 class="font-semibold uppercase tracking-wider">Donde Encontrarnos</h2>
+      <p>Avenida Escazú - Edificio 201,Oficina 406</p>
+      <p>San José, Costa Rica</p>
+    </div>
+    <div class="flex flex-col gap-2 items-center justify-center">
+      <h2 class="font-semibold uppercase tracking-wider">Medios de Contacto:</h2>
+      <ul class="flex flex-col gap-2">
+        <li class="text-center">{{"info@wsaffinitty.com"}}</li>
+        <li class="text-center">(506) 60496846 / (506) 60148488</li>
+      </ul>
+    </div>
+    <div class="flex flex-col gap-2 items-center justify-center">
+      <h2 class="font-semibold uppercase tracking-wider">Horarios:</h2>
+      <p>Lunes a Viernes</p>
+      <p>9:00 a 21:00</p>
+    </div>
+  </div>
+
+</p-dialog>

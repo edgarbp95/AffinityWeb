@@ -1,0 +1,15 @@
+<div class="carousel">
+  <div class="carousel-track">
+    <div
+      class="carousel-slide"
+      *ngFor="let item of items; let i = index"
+      [ngClass]="getSlideClass(i)"
+    >
+      <div class="carousel-slide-item">
+        <img [src]="item.image" alt="slide" />
+      </div>
+    </div>
+  </div>
+  <i class="btn prev fa fa-caret-left text-[30px] text-gray-600 transition-all hover:text-[#ffa400] hover:text-[33px] cursor-pointer" (click)="prevSlide()"></i>
+  <i class="btn next fa fa-caret-right text-[30px] text-gray-600 transition-all hover:text-[#ffa400] hover:text-[33px] cursor-pointer" (click)="nextSlide()"></i>
+</div>

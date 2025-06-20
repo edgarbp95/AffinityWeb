@@ -1,0 +1,75 @@
+<div class="w-full flex flex-col max-w-[1450px] m-auto px-10 container-soluciones">
+
+<div class="w-full gap-[80px] py-[50px] flex justify-between soluciones-tecnologicas" >
+  <div class="w-full max-w-[900px]">
+    <span class="text-xs uppercase tracking-widest font-bold text-[#0A71C2]">Affinity Pro</span>
+    <h2 class="text-3xl font-bold mb-4 border-b border-[#01376D] pb-2">Soluciones Tecnológicas</h2>
+    <div class="flex flex-col gap-2">
+      <p class="text-justify"><span class="font-bold">Affinity Pro</span> es un sistema transaccional, especializado para la venta y administración de pólizas de productos comercializados de forma masiva, a través de Aseguradoras, Instituciones Financieras y cualquier otro canal de distribución masiva.  </p>
+      <p class="text-justify">
+        Affinity Pro permite la comercialización y el manejo de manera sencilla y amigable para con el usuario de productos de las familias de accidentes, vida, salud, daños, deuda y asistencias.
+      </p>
+    </div>
+    <div *ngIf="itemSelected" class=" gap-4 bg-gray-100 py-4 px-[50px] rounded-xl mt-4 border border-gray-400 shadow-sm beneficio-affi hidden md:flex" >
+      <div class="flex flex-col justify-center items-center gap-3 border-r border-dashed border-gray-300 pr-6">
+        <img [src]="itemSelected.urlImg" alt="" class="w-16 object-contain">
+      </div>
+      <div>
+        <h3 class="font-bold pb-2 text-sm">{{itemSelected.title}}:</h3>
+        <ul class="text-xs list-disc pl-6 text-gray-700">
+          <li *ngFor="let item of itemSelected.data">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="overflow-hidden  w-[400px] min-w-[420px] img-soluciones">
+    <img class="w-full rounded-xl" src="../../assets/solu-affi2.png" alt="">
+  </div>
+</div>
+    <h2 class="uppercase tracking-wide font-bold text-xs border-b border-gray-100 pb-2 text-gray-500">Otros beneficios:</h2>
+    <div class="affi-beneficios flex gap-2 justify-between" *ngIf="beneficios && beneficios.length > 0">
+      <ng-container *ngFor="let beneficio of beneficios; let i=index">
+        <div *ngIf="!isDesktop || beneficio !== itemSelected" class="flex flex-col gap-3 justify-center items-center cursor-pointer hover:bg-gray-100 transition-all p-[10px] rounded-xl w-[190px] h-[160px]" (click)="handleBenefitClick(beneficio)" data-aos="fade-in" [attr.data-aos-delay]="i * 50">
+          <img [src]="beneficio?.urlImg" alt="Beneficio">
+          <h4 class="font-bold uppercase tracking-wide text-xs">{{beneficio.title}}</h4>
+        </div>
+      </ng-container>
+    </div>
+<div class="flex gap-4 pb-10 border-t border-gray-200 pt-8 modulos-soluciones " data-aos="fade-up">
+  <div class="h-fit w-[400px] rounded-3xl pt-10 px-0 border border-gray-400 shadow-sm modulos-soluciones-l">
+    <div class="flex gap-2">
+      <button class="uppercase font-bold w-full text-center tracking-wide">Modulos</button>
+    </div>
+    <ul class="py-3 flex flex-col">
+      <li class="py-2 w-full  border-gray-200 item-tab pl-6" *ngFor="let modulo of modulos" (click)="moduloSelected = modulo" [ngClass]="{'tab-active' : modulo === moduloSelected}">{{modulo.title}}</li>
+    </ul>
+  </div>
+  <div class="w-full bg-gray-100 rounded-3xl py-10 px-12 border border-gray-300 shadow-sm modulos-soluciones-r">
+    <ng-container *ngIf="moduloSelected">
+      <h2 class="uppercase font-bold tracking-wide pb-3">{{moduloSelected.title}}</h2>
+      <p class="text-sm">{{moduloSelected.description}}</p>
+      <ul class="text-sm list-disc pl-6 text-gray-700 flex flex-col gap-2 my-3">
+          <li *ngFor="let item of moduloSelected.data" class="text-justify" >{{ item }}</li>
+      </ul>
+    </ng-container>
+  </div>
+</div>
+
+  
+</div>
+
+<div class="dialog-beneficio">
+  <p-dialog [(visible)]="openBenefit" [modal]="true" [closeOnEscape]="true" [style]="{ width: '95%', maxWidth: '600px' }" [dismissableMask]="true">
+     <div  class=" gap-4 bg-gray-100 py-4 px-[50px] shadow-sm beneficio-affi" >
+        <div class="flex flex-col justify-center items-center gap-3 border-r border-dashed border-gray-300 pr-6">
+          <img [src]="itemSelected.urlImg" alt="" class="w-16 object-contain">
+        </div>
+        <div class="mt-4">
+          <h3 class="font-bold pb-2 text-sm">{{itemSelected.title}}:</h3>
+          <ul class="text-xs list-disc pl-6 text-gray-700">
+            <li *ngFor="let item of itemSelected.data">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+  </p-dialog>
+</div>

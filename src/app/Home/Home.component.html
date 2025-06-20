@@ -1,0 +1,200 @@
+<div class="container-home flex justify-start items-center pt-[100px]">
+
+  <div class="animated-text w-[45%] ml-[150px] mr-[50px] relative z-10">
+    <span class="word tracking-widest uppercase" *ngFor="let word of words">
+      <span
+        *ngFor="let letter of word.letters; let i = index"
+        class="fade-letter text-4xl text-[#fff] font-bold font-nunito"
+        [class.show]="letter.show"
+        [style.transitionDelay]="letter.delay + 'ms'"
+      >
+        {{ letter.char }}
+      </span>
+      <span class="space">&nbsp;</span>
+    </span>
+    <div class="flex flex-col justify-start items-left gap-4 mt-8 text-secondary ">
+      <p class="text-xl font-medium font-nunito text-[#fff]">Descubra cómo podemos hacerlo juntos.</p>
+
+      <button class="cta" [routerLink]="'/soluciones-tecnologicas'">
+        <span class="uppercase">Ver mas</span>
+        <svg width="15px" height="10px" viewBox="0 0 13 10">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+   <div class="right w-2/4 h-full flex justify-center items-center pr-10">
+    <img src="../../assets/affinity-img.png" alt="">
+  </div>
+  
+</div>
+<div class="p-14 flex flex-col justify-center gap-4  franja-cifras overflow-hidden bg-[#dcdcdc1f]">
+  <h2 class="font-nunito uppercase font-bold text-center text-3xl text-azul" >Cifras importantes</h2>
+  <div class="divisor" ></div>
+  <div class="flex gap-4 justify-center cifras-importantes">
+    <div data-aos="fade-up" data-aos-delay="100" class="card-simple min-w-[250px] p-4 flex flex-col gap-2 justify-center items-center rounded-lg border-2 border-gris-claro bg-blanco shadow-md hover:scale-105 transition-all cursor-pointer">
+      <p class="text-5xl font-bold text-azul text-cifra">+$48</p>
+      <p class="uppercase font-semibold">MILLONES</p>
+      <p>Primas Recolectadas</p>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="300" class="card-simple min-w-[250px] p-4 flex flex-col gap-2 justify-center items-center rounded-lg border-2 border-gris-claro bg-blanco shadow-md hover:scale-105 transition-all cursor-pointer">
+      <p class="text-5xl font-bold text-azul text-cifra">870</p>
+      <p class="uppercase font-semibold">MIL PÓLIZAS</p>
+      <p>Vendidas y Administradas</p>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="500" class="card-simple min-w-[250px] p-4 flex flex-col gap-2 justify-center items-center rounded-lg border-2 border-gris-claro bg-blanco shadow-md hover:scale-105 transition-all cursor-pointer">
+      <p class="text-5xl font-bold text-azul text-cifra">+30</p>
+      <p class="uppercase font-semibold">PRODUCTOS</p>
+      <p>Banca y Seguros Masivos</p>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="700" class="card-simple min-w-[250px] p-4 flex flex-col gap-2 justify-center items-center rounded-lg border-2 border-gris-claro bg-blanco shadow-md hover:scale-105 transition-all cursor-pointer">
+      <p class="text-5xl font-bold text-azul text-cifra">+800</p>
+      <p class="uppercase font-semibold">MIL CLIENTES</p>
+      <p>Asegurados</p>
+    </div>
+  </div>
+  <button class="button m-auto hover:!text-gray-800" data-aos="fade-in" data-aos-delay="900" data-aos-duration="500" [routerLink]="'/compañia'">Conocer más</button>
+</div>
+<div class="p-10 flex flex-col justify-center gap-4 bg-[#0a121f] border-t border-gris-gris-claro trama-affi" id="servicio">
+  <h2 class="font-nunito uppercase font-bold text-center text-3xl text-white pb-4">Servicios Affinity</h2>
+  <div class="w-full max-w-[1400px] flex justify-center gap-5 items-center m-auto">
+    
+    <div class="grid grid-cols-2 productos-affi gap-2 my-[80px]">
+      <div class="relative">
+        <div class="container2 item-1" [ngClass]="{'!flex' : service === 1}">
+          <div class="box" data-aos="fade-right" data-aos-delay="100">
+            <h2 class="justify-between w-full flex md:hidden">Desarrollo Comercial <i class="fa fa-close" (click)="service=0"></i></h2>
+            <ul>
+              <li>Estrategia comercial y planificación.</li>
+              <li>Segmentación de clientes.</li>
+              <li>Diseño y desarrollo de productos.</li>
+              <li>Distribución y negociaciones.</li>
+              <li>Marketing, incentivos y lanzamientos.</li>
+            </ul>
+            <button class="btn-ver" (click)="productsModal=true">Ver Seguros</button>
+          </div>
+
+        </div>
+        <div class="productos-affi-item i-1  text-white p-2 w-[150px] h-[150px] lg:w-[180px] lg:h-[180px] flex justify-center items-center text-center rounded-tl-full" (click)="service = 1">
+          <span class="relative top-[20px] left-[14px] lg:text-[18px] text-[15px] font-medium flex flex-col">Desarrollo comercial
+            <span class="text-xs mt-1 text-gray-300 flex justify-center md:hidden">Ver más</span>
+          </span>
+          
+         
+        </div>
+      </div>
+      <div class="relative">
+        <div class="container2 item-2" [ngClass]="{'!flex' : service === 2}">
+          <div class="box" data-aos="fade-left" data-aos-delay="100">
+            <h2 class="justify-between w-full flex md:hidden">Operaciones<i class="fa fa-close" (click)="service=0"></i></h2>
+            <ul>
+              <li>Mapeo de procesos Operativos.</li>
+              <li>Diseño de procesos y guías de ventas, cobranzas y reclamos.</li>
+              <li>Manejo, seguimiento y control de reclamos.</li>
+              <li>Centro de llamadas.</li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="productos-affi-item i-2  text-white p-2 w-[150px] h-[150px] lg:w-[180px] lg:h-[180px] flex justify-center items-center text-center rounded-tr-full" (click)="service = 2">
+          <span class="relative top-[25px] right-[6px] lg:text-[18px] text-[15px] font-medium flex flex-col">Operaciones
+             <span class="text-xs mt-1 text-gray-300 flex justify-center md:hidden">Ver más</span>
+          </span>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="container2 item-3" [ngClass]="{'!flex' : service === 3}">
+          <div class="box" data-aos="fade-right" data-aos-delay="300">
+            <h2 class="justify-between w-full flex md:hidden">Tecnología <i class="fa fa-close" (click)="service=0"></i></h2>
+            <ul>
+              <li>Configuración de productos, usuarios y roles.</li>
+              <li>Gestión de ventas de seguros.</li>
+              <li>Control de cobranza y distribución de primas.</li>
+              <li>Reportes y estadísticas operativas.</li>
+              <li>Integración con sistemas externos (PriceSmart, aseguradoras).</li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="productos-affi-item i-1   text-white p-2 w-[150px] h-[150px] lg:w-[180px] lg:h-[180px] flex justify-center items-center text-center rounded-bl-full" (click)="service = 3">
+          <span class="relative left-[8px] bottom-[20px] lg:text-[18px] text-[15px] font-medium flex flex-col">Tecnología
+             <span class="text-xs mt-1 text-gray-300 flex justify-center md:hidden">Ver más</span>
+          </span>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="container2 item-4" [ngClass]="{'!flex' : service === 4}">
+          <div class="box" data-aos="fade-left" data-aos-delay="300">
+            <h2 class="justify-between w-full flex md:hidden">Gestion de Venta <i class="fa fa-close" (click)="service=0"></i></h2>
+            <ul>
+              <li>Acompañamiento en todo el proceso.</li>
+              <li>Asesoría permanente.</li>
+              <li>Capacitaciones constantes.</li>
+              <li>Seguimiento y administración de la gestión, informes, reportes.</li>
+              <li>Soporte 24/7.</li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="productos-affi-item i-2   text-white p-2 w-[150px] h-[150px] lg:w-[180px] lg:h-[180px] flex justify-center items-center text-center rounded-br-full" (click)="service = 4">
+          <span class="relative right-[8px] bottom-[20px] lg:text-[18px] text-[15px] font-medium flex flex-col">
+          Gestion de Venta
+           <span class="text-xs mt-1 text-gray-300 flex justify-center md:hidden">Ver más</span>
+        </span>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+   
+</div>
+<div class="p-10 flex justify-center gap-[70px] bg-[#0f1f36] border-t border-gris-gris-claro affi-pro">
+   <div class="flex flex-col gap-4" >
+     <img class="w-[250px]" src="../../assets/af-pro-logo-w.png" alt="">
+      <p class="text-white tracking-widest w-[250px] text-center">Sistema para comercialización masiva de seguros</p>
+   </div>
+   <div class="text-blanco flex justify-center flex-col gap-8">
+    <ul class="list-affi-pro">
+      <li><i class="fa fa-check text-amarillo mr-1"></i> Herramienta Web: que desarrolla el negocio de Affinity de una manera flexible, escalable y ágil.</li>
+      <li><i class="fa fa-check text-amarillo mr-1"></i> Capacidad multifuncional: multiproducto, multiaseguradora, multicliente, multicanal, multioperación, multimoneda.</li>
+      <li><i class="fa fa-check text-amarillo mr-1"></i> Transaccionalidad y administración de seguros y servicios comercializados por nuestros clientes.</li>
+    </ul>
+    <button class="button before:!bg-[#182a43a1]" data-aos="fade-in" [routerLink]="'/soluciones-tecnologicas'">Más info +</button>
+   </div>
+</div>
+<div class="p-14 flex flex-col justify-center gap-1  franja-cifras overflow-hidden bg-[#dcdcdc1f]" id="clientes">
+  <div class="flex flex-col gap-1 mb-4">
+     <h2 class="font-nunito uppercase font-bold text-center text-3xl text-azul pb-3" >Nuestros Clientes</h2>
+     <span class="text-sm text-gris-marron text-center" >Tenemos 15 clientes satisfechos con quienes hemos crecido en conjunto.</span>
+    
+   </div>
+
+  <app-bs-slider data-aos="fade-up" data-aos-duration="1000"></app-bs-slider>
+
+</div>
+
+
+<div class="dialog-productos">
+  <p-dialog [(visible)]="productsModal" [modal]="true" [closeOnEscape]="true" [style]="{ width: '95%', maxWidth: '600px' }" [dismissableMask]="true">
+    <div class="bg-[#010E20] flex flex-col bg-modal text-white">
+      
+      <div class="pt-4 px-4">
+      <h2 class="uppercase tracking-wider text-sm font-medium text-white mb-3">Caracteristicas y Tipos de seguros:</h2>
+      <div class="flex flex-col">
+        <div class="border border-gray-200 p-2 text-sm bg-white-opacity-10">Fáciles de entender y Comercializar</div>
+        <div class="flex modal-produtos">
+          <div class="p-2 border border-gray-200 text-sm bg-white-opacity-10">Bajo Costo</div>
+          <div class="p-2 border border-gray-200 text-sm bg-white-opacity-10">Pocas y Sencillas Coberturas</div>
+          <div class="p-2 border border-gray-200 text-sm bg-white-opacity-10">Sin Riesgo de selección ni exámenes </div>
+          <div class="p-2 border border-gray-200 text-sm bg-white-opacity-10">Sumas aseguradas básicas</div>
+          <div class="p-2 border border-gray-200 text-sm bg-white-opacity-10">Pago rápido de los reclamos</div>
+          <div class="p-2 border border-gray-200 text-sm bg-white-opacity-10">Pocas exclusiones</div>
+        </div>
+      </div>
+      </div>
+      <img src="../../assets/panel-productos.png" alt="">
+    </div>
+  </p-dialog>
+</div>

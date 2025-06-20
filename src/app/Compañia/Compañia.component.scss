@@ -1,0 +1,100 @@
+.sobre-nosotros{
+    position: relative;
+    height: 40dvh;
+    background-color: #011830;
+    z-index: 2;
+}
+
+.sobre-nosotros::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-image: url(../../assets/bg-affi4.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.sobre-nosotos img{
+    object-fit: cover;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+ .card-simple{
+    border-radius: 15px;
+    border: 1px solid gainsboro;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px #00000012, inset 0 0 15px #0000002e;
+  }
+
+  .active-tab{
+    border-bottom: 3px solid #ED9F2D !important;
+    color: #252129 !important;
+    opacity: 1 !important;
+  }
+
+  @media screen and (max-width:768px) {
+    .sobre-nosotros{
+      height: 35dvh;
+      min-height: 280px;
+    }
+    
+    .sobre-nosotros div{
+      width: 100%;
+      padding: 0 20px;
+      
+      h2{
+        font-size: 22px;
+      }
+      p{
+        font-size: 12px;
+      }
+    }
+
+    .nuestro-equipo{
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .mapa{
+      width: 90% !important;
+      min-width: 300px !important;
+
+      ul{
+        bottom: 0;
+      }
+
+      li{
+        font-size: 10px;
+      }
+
+    }
+    .tab-aboutus{
+
+
+      span{
+        font-size: 22px !important;
+      }
+    }
+
+    .valores{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      text-align: justify;
+    }
+
+    .info p, .info li{
+      font-size: 14px;
+      text-align: justify;
+    }
+    
+  }
