@@ -11,10 +11,14 @@ export class BsSliderComponent implements OnInit {
 
   items = [
     { image: '../assets/clientes/1.png' },
-    { image: '../assets/clientes/2.png' },
+    { image: '../assets/clientes/14.png' },
+    { image: '../assets/clientes/13.png' },
+    { image: '../assets/clientes/15.png' },
     { image: '../assets/clientes/3.jpg' },
+    { image: '../assets/clientes/11.png' },
+    { image: '../assets/clientes/12.png' },
     { image: '../assets/clientes/4.jpg' },
-    { image: '../assets/clientes/5.jpg' },
+    // { image: '../assets/clientes/5.jpg' },
     { image: '../assets/clientes/6.jpg' },
     { image: '../assets/clientes/7.jpg' },
     { image: '../assets/clientes/8.png' },
